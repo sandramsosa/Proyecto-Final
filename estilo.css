@@ -1,0 +1,317 @@
+/*======================borrar estilos por defecto==========================*/
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman';
+}
+body{
+  background-color: rgb(208, 242, 202);
+}
+/*======================estilo encabezado==========================*/
+h1{
+  background-color: black;
+  color: white;
+  padding: 20px 0px 0px 40px;
+  margin: 0px;
+}
+nav{
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.button {
+  margin: 0px 20px 40px 30px;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color:  #0fd850;
+  --fs-size: 1em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+#encabezado{
+  padding: 10px 15px;
+  font-size: 1.2em;
+}
+/*======================estilos de tarjetas==========================*/
+#caja{
+  display: grid;
+  gap: 30px;
+  /*grid-template-columns: repeat(auto-fill,minmax(min(100%,380px),1fr));*/
+  grid-template-columns: repeat(4, 1fr);
+}
+.card {
+  border-radius: 20px;
+  background: #eaeaea;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card p{
+  margin-bottom: 5px;
+}
+img{
+  padding: 5px;
+  margin-bottom: 35px;
+}
+.card img{
+  width: 100%;
+  border-radius: 20px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card:hover img {
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  box-shadow: 0px 0px 50px 50px  #0fd850;
+  -webkit-box-shadow: 0px 0px 50px 50px  #48f47f;
+}
+
+.vermas{
+  margin:30px 130px 20px 130px;
+  color: #096e29;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 15px;
+  box-shadow: rgba(6, 6, 7, 0.2) 0px 7px 20px 0px;
+  border-radius: 10%;
+};
+/*=====================estilos de datos de fin de pagina==========================*/
+.antefooter{
+  margin: 10px;
+}
+
+#datodepaginas{
+  text-align: center;
+  padding: 10px;
+}
+.totalpag{
+  text-align: center;
+  padding: 10px; 
+}
+/*======================estilo de botones de avance y retroceso==========================*/
+#botones{
+  text-align: center;
+  padding: 20px;
+}
+#primera, #anterior, #siguiente, #ultima {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #949292,
+              -6px -6px 12px #e4e3e3;
+ }
+ button::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ button:hover::before {
+  width: 9em;
+ }
+/*======================estilo pie de pagina==========================*/
+.pie-pagina{
+  width: 100%;
+  background-color: #0a141d;
+}
+.pie-pagina .grupo1{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 50px;
+  padding: 45px 0px;
+}
+.pie-pagina .grupo1 .box figure{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pie-pagina .grupo1 .box figure img{
+  width: 100px;
+}
+.pie-pagina .grupo1 .box h2{
+  color: white;
+  margin-bottom: 25px;
+  font-size: 20px;  
+}
+.pie-pagina .grupo1 .box p{
+  color: #efefef;
+  margin-bottom: 10px;
+}
+.pie-pagina .grupo1 .red-social a{
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  background-color: #0d2033;
+  text-align: center;
+  transition: all 300ms ease;
+}
+.pie-pagina .grupo1 .red-social a:hover{
+  color: aqua;
+}
+.pie-pagina .grupo2{
+  background-color: #0a1a2a;
+  padding: 15px 10px;
+  text-align: center;
+  color: white;
+}
+.pie-pagina .grupo2 small{
+  font-size: 15px;
+}
+/*======================responsive==========================*/
+@media (max-width:320px){
+  h1{
+    font-size: 20px;
+    padding: 20px 0px 10px 40px;
+    text-align: center;
+  }
+  nav{
+    flex-direction: column;
+    padding-bottom: 20px;
+   }
+   .button {
+     margin: 0px 10px 20px 20px;
+   }
+   #caja{
+    grid-template-columns: repeat(1, 1fr); 
+  }
+  .card img{
+    width: 90%;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card:hover img {
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    box-shadow: 0px 0px 50px 50px  #0fd850;
+    -webkit-box-shadow: 0px 0px 50px 50px  #0fd850;
+  }
+  .pie-pagina .grupo1{
+    width: 80%;
+    grid-template-columns: repeat(1,1fr);
+    gap: 30px;
+    padding: 35px 0px;
+  }
+  .pie-pagina .grupo2{
+    background-color: #0a1a2a;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    text-align: center;  
+  }
+  #primera, #anterior, #siguiente, #ultima {
+    width: 8.5em;
+    height: 3em;
+    font-size: 7.88px;
+  }
+  
+}
+  
+@media (min-width:320px) and (max-width:1024px) {
+  h1{
+    font-size: 30px;
+    padding: 20px 0px 15px 40px;
+    text-align: center;
+  }
+  nav{
+    flex-direction: column;
+    padding-bottom: 25px;
+   }
+   .button {
+     margin: 0px 10px 20px 20px;
+   }
+   #caja{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .card img{
+    width: 90%;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card:hover img {
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    box-shadow: 0px 0px 50px 50px  #0fd850;
+    -webkit-box-shadow: 0px 0px 50px 50px  #0fd850;
+  }
+  .pie-pagina .grupo1{
+    width: 85%;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    padding: 35px 0px;
+  }
+  .pie-pagina .grupo2{
+    background-color: #0a1a2a;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    text-align: center;  
+  }
+  #primera, #anterior, #siguiente, #ultima {
+    width: 9em;
+    height: 3em;
+    font-size: 20px;
+  }
+}
+
+
+
+
