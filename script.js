@@ -14,7 +14,7 @@ function mostrar(array) {
   for (let i = 0; i < array.length; i++) {
     $caja.innerHTML += `<div class="card">
     <img src=${array[i].image}>
-    <div class="contenido"><h2>Nombre: ${array[i].name}</h2>
+    <h2>Nombre: ${array[i].name}</h2>
     <p>Genero: ${array[i].gender}</p>
     <p>Especie: ${array[i].species}</p>
     <p>Estado: ${array[i].status}</p>
