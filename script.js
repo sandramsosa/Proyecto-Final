@@ -77,55 +77,74 @@ $hombreb.addEventListener('click', mostrarhombre);
 $singenero.addEventListener('click', mostrarsingenero);
 
 
-//===================================paginado (variables,funciones,eventos===================================//
-let $siguiente=document.getElementById('siguiente');
-let $anterior=document.getElementById('anterior');
-let $ultima=document.getElementById('ultima');
-let $primera=document.getElementById('primera');
+// ============================= paginado (variables,funciones,eventos) =============================== //
 
-function siguientepagina() {
- pagina++;
- usarfectch(pagina);
- Pagination();
-};
-function paginaanterior() {
-  pagina--;
-  usarfectch(pagina);
-  Pagination();
-  
-};
-function ultimapagina(){
-  pagina=42;
-  usarfectch(42); 
-  Pagination(); 
-};
-function primerapagina(){
-  pagina=1;
-  usarfectch(1);
-  Pagination();
-};
+let $siguiente = document.getElementById('siguiente');
+let $anterior = document.getElementById('anterior');
+let $ultima = document.getElementById('ultima');
+let $primera = document.getElementById('primera');
 
-let Pagination = () => {
-  if(pagina === 1){
+function actualizarBotonesPaginado() {
+  // Habilitar o deshabilitar botones según la página actual
+  if (pagina === 1) {
     $anterior.disabled = true;
     $primera.disabled = true;
   } else {
     $anterior.disabled = false;
     $primera.disabled = false;
   }
-  if(pagina === 42 ){
-    $siguiente.disabled = true
-    $ultima.disabled = true
+
+  if (pagina === 42) {
+    $siguiente.disabled = true;
+    $ultima.disabled = true;
   } else {
-    $siguiente.disabled = false
-    $ultima.disabled = false
+    $siguiente.disabled = false;
+    $ultima.disabled = false;
   }
 }
 
-$siguiente.addEventListener('click',siguientepagina)
-$anterior.addEventListener('click',paginaanterior)
-$ultima.addEventListener('click',ultimapagina)
-$primera.addEventListener('click',primerapagina)
+function siguientepagina() {
+  if (pagina === 42) {
+    // Si estamos en la última página, no podemos ir más allá
+    return;
+  }
+
+  pagina++;
+  usarfectch(pagina);
+  actualizarBotonesPaginado();
+}
+
+function paginaanterior() {
+  if (pagina === 1) {
+    // Si estamos en la primera página, no podemos ir hacia atrás
+    return;
+  }
+
+  pagina--;
+  usarfectch(pagina);
+  actualizarBotonesPaginado();
+}
+
+function ultimapagina() {
+  pagina = 42;
+  usarfectch(pagina);
+  actualizarBotonesPaginado();
+}
+
+function primerapagina() {
+  pagina = 1;
+  usarfectch(pagina);
+  actualizarBotonesPaginado();
+}
+
+// Asociar eventos a las funciones de paginado
+$siguiente.addEventListener('click', siguientepagina);
+$anterior.addEventListener('click', paginaanterior);
+$ultima.addEventListener('click', ultimapagina);
+$primera.addEventListener('click', primerapagina);
+
+// Llamar a actualizarBotonesPaginado al inicio para asegurarse de que los botones estén en el estado correcto
+actualizarBotonesPaginado();
 
 //========================================================================================//
 //falta funcionalidad de boton ver mas
