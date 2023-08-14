@@ -85,7 +85,6 @@ let $ultima = document.getElementById('ultima');
 let $primera = document.getElementById('primera');
 
 function actualizarBotonesPaginado() {
-  // Habilitar o deshabilitar botones según la página actual
   if (pagina === 1) {
     $anterior.disabled = true;
     $primera.disabled = true;
@@ -105,7 +104,6 @@ function actualizarBotonesPaginado() {
 
 function siguientepagina() {
   if (pagina === 42) {
-    // Si estamos en la última página, no podemos ir más allá
     return;
   }
 
@@ -116,7 +114,6 @@ function siguientepagina() {
 
 function paginaanterior() {
   if (pagina === 1) {
-    // Si estamos en la primera página, no podemos ir hacia atrás
     return;
   }
 
@@ -137,13 +134,11 @@ function primerapagina() {
   actualizarBotonesPaginado();
 }
 
-// Asociar eventos a las funciones de paginado
 $siguiente.addEventListener('click', siguientepagina);
 $anterior.addEventListener('click', paginaanterior);
 $ultima.addEventListener('click', ultimapagina);
 $primera.addEventListener('click', primerapagina);
 
-// Llamar a actualizarBotonesPaginado al inicio para asegurarse de que los botones estén en el estado correcto
 actualizarBotonesPaginado();
 
 //========================================================================================//
