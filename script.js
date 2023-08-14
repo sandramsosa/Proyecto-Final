@@ -108,6 +108,7 @@ function siguientepagina() {
   }
 
   pagina++;
+  window.scrollTo({ top: 0, behavior: 'smooth' })
   usarfectch(pagina);
   actualizarBotonesPaginado();
 }
@@ -118,21 +119,25 @@ function paginaanterior() {
   }
 
   pagina--;
+  window.scrollTo({ top: 0, behavior: 'smooth' })
   usarfectch(pagina);
   actualizarBotonesPaginado();
 }
 
 function ultimapagina() {
   pagina = 42;
+  window.scrollTo({ top: 0, behavior: 'smooth' })
   usarfectch(pagina);
   actualizarBotonesPaginado();
 }
 
 function primerapagina() {
   pagina = 1;
+  window.scrollTo({ top: 0, behavior: 'smooth' })
   usarfectch(pagina);
   actualizarBotonesPaginado();
 }
+
 
 $siguiente.addEventListener('click', siguientepagina);
 $anterior.addEventListener('click', paginaanterior);
