@@ -228,7 +228,7 @@ img{
     grid-template-columns: repeat(1, 1fr); 
   }
   .card img{
-    width: 90%;
+    width: 100%;
   }
   .card:hover {
     transform: scale(1.05);
@@ -261,7 +261,7 @@ img{
   
 }
   
-@media (min-width:340px) and (max-width:1024px) {
+@media (min-width:341px) and (max-width:1024px) {
   h1{
     font-size: 30px;
     padding: 20px 0px 15px 40px;

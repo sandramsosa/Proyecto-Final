@@ -23,7 +23,7 @@ function mostrar(array) {
     <div class="vermas"><button onclick="verMasDetalles(todospersonajes[${i}])">Ver Mas</button></div>
   </div>`  
   };
-  datos.innerHTML=`<p id="datodepaginas">Pagina actual:${pagina}</p>`
+  datos.innerHTML=`<p id="datodepaginas">Página actual:${pagina}</p>`
   personajes.innerHTML=`<p id="encabezado">Total de personajes: ${array.length}</p>`
 };
 
@@ -103,7 +103,6 @@ function actualizarBotonesPaginado() {
     $ultima.disabled = false;
   }
 }
-
 function siguientepagina() {
   if (pagina === 42) {
     return;
@@ -114,12 +113,10 @@ function siguientepagina() {
   usarfectch(pagina);
   actualizarBotonesPaginado();
 }
-
 function paginaanterior() {
   if (pagina === 1) {
     return;
   }
-
   pagina--;
   window.scrollTo({ top: 0, behavior: 'smooth' })
   usarfectch(pagina);
@@ -132,7 +129,6 @@ function ultimapagina() {
   usarfectch(pagina);
   actualizarBotonesPaginado();
 }
-
 function primerapagina() {
   pagina = 1;
   window.scrollTo({ top: 0, behavior: 'smooth' })
