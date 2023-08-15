@@ -20,14 +20,16 @@ function mostrar(array) {
     <p>Estado: ${array[i].status}</p>
     <p>Origen: ${array[i].origin.name}</p>
     <p>Locacion: ${array[i].location.name}</p>
-    <button class='vermas' onclick='redireccion()'>Ver Mas</button>
+    <div class="vermas"><button onclick="verMasDetalles(todospersonajes[${i}])">Ver Mas</button></div>
   </div>`  
   };
   datos.innerHTML=`<p id="datodepaginas">Pagina actual:${pagina}</p>`
   personajes.innerHTML=`<p id="encabezado">Total de personajes: ${array.length}</p>`
 };
 
-
+function verMasDetalles(personaje) {
+  alert(`Detalles de ${personaje.name}:\n\nEspecie: ${personaje.species}\nGenero: ${personaje.gender}\nOrigen: ${personaje.origin.name}\nURL: ${personaje.url}\nCreado: ${personaje.created}\nEpisodio: ${personaje.episode}`);
+};
 //==========================fetch de personajes==================================//
 function usarfectch(numerodepagina) {
   fetch(`https://rickandmortyapi.com/api/character/?page=${numerodepagina}`)
@@ -146,11 +148,7 @@ $primera.addEventListener('click', primerapagina);
 
 actualizarBotonesPaginado();
 
-//========================================================================================//
-//falta funcionalidad de boton ver mas
-function redireccion(){
-  location.href='vermas.html'
-}
+
 
 
 
